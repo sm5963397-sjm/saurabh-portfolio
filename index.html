@@ -1500,21 +1500,25 @@
             <div class="glass-card contact-form" data-aos="fade-left" data-aos-delay="300">
                 <!-- Option 1: Use Formspree. Replace YOUR_FORM_ID with your real Formspree form id. -->
                 <!-- Example action: https://formspree.io/f/abcdwxyz -->
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required />
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 12px;">
-                        Send Message <i class="fas fa-paper-plane"></i>
-                    </button>
-                    <p id="formStatus"></p>
-                </form>
+               <form id="contactForm">
+  <div class="form-group">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+  </div>
+
+  <div class="form-group">
+    <input type="email" id="email" name="email" placeholder="Your Email" required />
+  </div>
+
+  <div class="form-group">
+    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+  </div>
+
+  <button type="submit" id="sendBtn" class="btn btn-primary" style="width: 100%; border-radius: 12px;">
+    Send Message <i class="fas fa-paper-plane"></i>
+  </button>
+
+  <p id="formStatus"></p>
+</form>
             </div>
         </div>
     </section>
@@ -1657,6 +1661,68 @@
             retina_detect: true
         });
     </script>
+    <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBGcbV4C95O7l6QoUPDI_ebE8PhksCa-hU",
+    authDomain: "portfolio-c2d02.firebaseapp.com",
+    projectId: "portfolio-c2d02",
+    storageBucket: "portfolio-c2d02.firebasestorage.app",
+    messagingSenderId: "6893797042",
+    appId: "1:6893797042:web:62b3c5dad39bb36b9e53ab",
+    measurementId: "G-GW9FW2P99B"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+  const sendBtn = document.getElementById("sendBtn");
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    try {
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+      formStatus.style.color = "#00ffff";
+      formStatus.textContent = "Sending your message...";
+
+      await addDoc(collection(db, "messages"), {
+        name: name,
+        email: email,
+        message: message,
+        source: "portfolio",
+        createdAt: serverTimestamp()
+      });
+
+      formStatus.style.color = "#22c55e";
+      formStatus.textContent = "Message sent successfully!";
+      contactForm.reset();
+
+    } catch (error) {
+      console.error("Firebase Error:", error);
+      formStatus.style.color = "#ef4444";
+      formStatus.textContent = "Message failed. Check Firebase rules.";
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+    }
+  });
+</script>
 </body>
 
 </html>

@@ -4,1725 +4,687 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saurabh Meshram | CSE Student & Developer Portfolio</title>
+    <title>Saurabh Meshram | Frontend Developer &amp; React Portfolio</title>
+    <meta name="description"
+        content="Saurabh Meshram is a Diploma CSE student and frontend developer building modern responsive websites, SaaS dashboards, and real-world web applications using React, Next.js, Tailwind CSS, Firebase, Supabase, and Vercel." />
+    <meta name="author" content="Saurabh Meshram" />
+    <meta name="keywords"
+        content="Saurabh Meshram, frontend developer, React developer, Next.js developer, UI UX developer, portfolio, internship, Firebase, Supabase, Tailwind CSS" />
+    <meta name="theme-color" content="#080b12" />
+    <link rel="canonical" href="https://sm5963397-sjm.github.io/saurabh-portfolio/" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Saurabh Meshram | Frontend Developer &amp; React Portfolio" />
+    <meta property="og:description"
+        content="Frontend Developer | React &amp; Next.js Developer | UI/UX focused developer building responsive SaaS dashboards and real-world web apps." />
+    <meta property="og:url" content="https://sm5963397-sjm.github.io/saurabh-portfolio/" />
+    <meta property="og:image" content="https://sm5963397-sjm.github.io/saurabh-portfolio/phot.png" />
+    <meta property="og:site_name" content="Saurabh Meshram Portfolio" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <style>
-        :root {
-            --bg-dark: #010410;
-            --nav-bg: rgba(1, 4, 16, 0.92);
-            --card-bg: rgba(17, 24, 39, 0.58);
-            --primary-cyan: #00ffff;
-            --accent-purple: #9333ea;
-            --accent-orange: #ff9f1c;
-            --text-main: #f3f4f6;
-            --text-dim: #9ca3af;
-            --glass-border: rgba(255, 255, 255, 0.09);
-            --cyan-glow: 0 0 22px rgba(0, 255, 255, 0.42);
-            --purple-glow: 0 0 25px rgba(147, 51, 234, 0.38);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 15% 15%, rgba(0, 255, 255, 0.11), transparent 30%),
-                radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.16), transparent 35%),
-                radial-gradient(circle at 50% 90%, rgba(255, 159, 28, 0.08), transparent 35%),
-                radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.18) 0%, rgba(1, 4, 16, 1) 70%);
-        }
-
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        #cursor-blur {
-            height: 350px;
-            width: 350px;
-            background-color: rgba(0, 255, 255, 0.1);
-            border-radius: 50%;
-            position: fixed;
-            filter: blur(100px);
-            z-index: -1;
-            pointer-events: none;
-            transition: all 0.05s linear;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #263044;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-cyan);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--nav-bg);
-            backdrop-filter: blur(14px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: 0.3px;
-        }
-
-        .logo span {
-            color: var(--primary-cyan);
-            text-shadow: var(--cyan-glow);
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-cyan);
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            color: #fff;
-            font-size: 1.45rem;
-            cursor: pointer;
-        }
-
-        section {
-            padding: 100px 10%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            line-height: 1.15;
-        }
-
-        .section-title span {
-            color: var(--primary-cyan);
-            text-shadow: var(--cyan-glow);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-dim);
-            margin-bottom: 4rem;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 22px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px) scale(1.01);
-            border-color: rgba(0, 255, 255, 0.3);
-            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.15);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.9rem 2.1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.4s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 0.98rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-cyan), #00cccc);
-            color: #000;
-            box-shadow: var(--cyan-glow);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-cyan);
-            color: var(--primary-cyan);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 25px rgba(0, 255, 255, 0.5);
-        }
-
-        .tag {
-            background: rgba(0, 255, 255, 0.06);
-            border: 1px solid rgba(0, 255, 255, 0.15);
-            color: var(--primary-cyan);
-            padding: 6px 15px;
-            border-radius: 50px;
-            font-size: 0.83rem;
-            transition: 0.3s;
-            cursor: default;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Hero */
-        .hero {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 4rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 0.7rem;
-            line-height: 1.1;
-        }
-
-        .hero h1 span {
-            font-weight: 300;
-        }
-
-        .typing-text {
-            color: var(--primary-cyan);
-            font-weight: 700;
-            min-height: 1.3em;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-shadow: var(--cyan-glow);
-        }
-
-        .hero p {
-            max-width: 680px;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            font-size: 1.08rem;
-            line-height: 1.85;
-        }
-
-        .hero-highlight {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-badge {
-            padding: 0.65rem 1rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.055);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            box-shadow: 0 0 18px rgba(0, 255, 255, 0.08);
-            font-size: 0.88rem;
-        }
-
-        .hero-badge i {
-            color: var(--accent-orange);
-            margin-right: 6px;
-        }
-
-        .social-hero {
-            margin-top: 2.5rem;
-            display: flex;
-            gap: 1.4rem;
-            font-size: 1.55rem;
-        }
-
-        .social-hero a {
-            color: var(--text-dim);
-            transition: 0.3s;
-        }
-
-        .social-hero a:hover {
-            color: var(--primary-cyan);
-            transform: scale(1.12);
-            text-shadow: var(--cyan-glow);
-        }
-
-        .hero-visual {
-            position: relative;
-            min-height: 480px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-orb {
-            width: min(390px, 88vw);
-            aspect-ratio: 1 / 1;
-            border-radius: 38px;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(0, 255, 255, 0.25);
-            box-shadow: var(--cyan-glow), var(--purple-glow);
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.12), rgba(147, 51, 234, 0.16));
-        }
-
-        .profile-orb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: grayscale(10%) contrast(110%);
-        }
-
-        .profile-orb::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(1, 4, 16, 0.68));
-        }
-
-        .floating-card {
-            position: absolute;
-            padding: 1rem 1.15rem;
-            border-radius: 18px;
-            background: rgba(17, 24, 39, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-            animation: floatCard 4s ease-in-out infinite;
-            font-size: 0.9rem;
-        }
-
-        .floating-card strong {
-            color: var(--primary-cyan);
-        }
-
-        .floating-card.one {
-            top: 50px;
-            left: 0;
-        }
-
-        .floating-card.two {
-            right: 5px;
-            bottom: 70px;
-            animation-delay: 1.2s;
-        }
-
-        .floating-card.three {
-            bottom: 20px;
-            left: 35px;
-            animation-delay: 2s;
-        }
-
-        @keyframes floatCard {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-14px);
-            }
-        }
-
-        /* About */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: var(--text-dim);
-            margin-bottom: 1.5rem;
-            font-size: 1.04rem;
-            line-height: 1.85;
-        }
-
-        .quote-box {
-            padding: 1.4rem;
-            border-left: 4px solid var(--primary-cyan);
-            margin-top: 1.4rem;
-        }
-
-        .quote-box p {
-            margin: 0;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: 22px;
-            overflow: hidden;
-            border: 1px solid var(--glass-border);
-            max-width: 400px;
-            justify-self: center;
-            box-shadow: var(--purple-glow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(22%) contrast(112%);
-        }
-
-        .about-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent, rgba(1, 4, 16, 0.78));
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .stat-card i {
-            font-size: 2rem;
-            color: var(--primary-cyan);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card h3 {
-            font-size: 2.15rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #fff, var(--primary-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-card p {
-            color: var(--text-dim);
-            font-size: 0.88rem;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.6rem;
-        }
-
-        .service-card {
-            padding: 2rem;
-            min-height: 230px;
-        }
-
-        .service-card i {
-            font-size: 2.2rem;
-            color: var(--primary-cyan);
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 0.8rem;
-        }
-
-        .service-card p {
-            color: var(--text-dim);
-            font-size: 0.94rem;
-            line-height: 1.7;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            padding: 2rem;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-card:hover .tag {
-            background: rgba(0, 255, 255, 0.12);
-            border-color: rgba(0, 255, 255, 0.3);
-        }
-
-        .marquee-wrap {
-            overflow: hidden;
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1.1rem 0;
-            margin-top: 3.2rem;
-            background: rgba(255, 255, 255, 0.025);
-        }
-
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: marquee 22s linear infinite;
-            gap: 1rem;
-        }
-
-        .tech-pill {
-            min-width: 145px;
-            text-align: center;
-            padding: 0.8rem 1.2rem;
-            border-radius: 999px;
-            background: rgba(0, 255, 255, 0.06);
-            border: 1px solid rgba(0, 255, 255, 0.16);
-            color: #fff;
-            font-weight: 600;
-        }
-
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-        }
-
-        .project-img-container {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            background: #080a15;
-            border-radius: 22px 22px 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--glass-border);
-            overflow: hidden;
-        }
-
-        .project-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            opacity: 0.92;
-        }
-
-       .project-img-container .fallback-icon {
-    display: none;
-    position: absolute;
-    font-size: 3.4rem;
-    color: var(--primary-cyan);
-    opacity: 0.85;
-    z-index: 1;
-}
-        .project-card:hover .project-img-container img {
-            transform: scale(1.08);
-        }
-
-        .project-img-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(1, 4, 16, 0.04), rgba(1, 4, 16, 0.75));
-        }
-
-        .project-details {
-            padding: 2rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-details h3 {
-            font-size: 1.42rem;
-            margin-bottom: 0.5rem;
-            transition: 0.3s;
-        }
-
-        .project-card:hover h3 {
-            color: var(--primary-cyan);
-        }
-
-        .project-tech {
-            font-size: 0.78rem;
-            color: var(--accent-purple);
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .project-details p {
-            color: var(--text-dim);
-            font-size: 0.94rem;
-            line-height: 1.7;
-            margin-bottom: 1.2rem;
-            flex-grow: 1;
-        }
-
-        .project-metrics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 1.3rem;
-        }
-
-        .metric {
-            padding: 0.45rem 0.75rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.055);
-            color: #fff;
-            font-size: 0.78rem;
-            border: 1px solid var(--glass-border);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: auto;
-            flex-wrap: wrap;
-        }
-
-        .project-links .btn {
-            padding: 0.65rem 1.35rem;
-            font-size: 0.88rem;
-        }
-
-        /* Working */
-        .working-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .working-card {
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .working-card::before {
-            content: '';
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(0, 255, 255, 0.1);
-            right: -50px;
-            top: -50px;
-            filter: blur(2px);
-        }
-
-        .working-card h3 {
-            margin-bottom: 0.8rem;
-            color: #fff;
-        }
-
-        .working-card p {
-            color: var(--text-dim);
-            line-height: 1.7;
-            font-size: 0.94rem;
-        }
-
-        /* Timeline */
-        .timeline-container {
-            position: relative;
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: var(--glass-border);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            right: -8px;
-            background: var(--bg-dark);
-            border: 2px solid var(--primary-cyan);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-            box-shadow: var(--cyan-glow);
-        }
-
-        .left {
-            left: 0;
-        }
-
-        .right {
-            left: 50%;
-        }
-
-        .right::after {
-            left: -8px;
-        }
-
-        .timeline-card {
-            padding: 1.5rem;
-            position: relative;
-            border-radius: 18px;
-        }
-
-        .timeline-card h4 {
-            color: var(--primary-cyan);
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-card h5 {
-            color: #fff;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .timeline-card .date {
-            color: var(--accent-orange);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .timeline-card p {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            line-height: 1.65;
-        }
-
-        /* Testimonials */
-        .testimonial-box {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 2.4rem;
-            text-align: center;
-        }
-
-        .testimonial-box i {
-            font-size: 2rem;
-            color: var(--primary-cyan);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-box p {
-            color: #fff;
-            font-size: 1.3rem;
-            line-height: 1.75;
-            font-weight: 600;
-        }
-
-        .testimonial-box span {
-            color: var(--text-dim);
-            display: block;
-            margin-top: 1rem;
-        }
-
-        /* Contact */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-info-card {
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .contact-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .contact-meta-item i {
-            font-size: 1.5rem;
-            color: var(--primary-cyan);
-            width: 30px;
-            text-align: center;
-        }
-
-        .contact-meta-item p,
-        .contact-meta-item a {
-            color: var(--text-main);
-            font-size: 1rem;
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        .contact-meta-item span {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .contact-form {
-            padding: 2.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid var(--glass-border);
-            padding: 1rem;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-cyan);
-            background: rgba(0, 255, 255, 0.02);
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-        }
-
-        #formStatus {
-            margin-top: 1rem;
-            color: var(--primary-cyan);
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            padding: 2.5rem 10%;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .footer-content h3,
-        .footer-content h4 {
-            color: #fff;
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-content a {
-            color: var(--text-dim);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.45rem;
-            transition: 0.3s;
-        }
-
-        .footer-content a:hover {
-            color: var(--primary-cyan);
-        }
-
-        .footer-bottom {
-            margin-top: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 1.5rem;
-        }
-
-        @media (max-width: 1024px) {
-
-            .hero,
-            .about-content,
-            .contact-content,
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-visual {
-                min-height: 420px;
-            }
-
-            .about-image {
-                grid-row: 1;
-                margin-bottom: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 85px 5%;
-            }
-
-            nav {
-                padding: 1rem 5%;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 68px;
-                right: 5%;
-                left: 5%;
-                display: none;
-                flex-direction: column;
-                background: rgba(1, 4, 16, 0.98);
-                border: 1px solid var(--glass-border);
-                border-radius: 16px;
-                padding: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                margin: 0;
-                padding: 0.75rem;
-            }
-
-            .hero h1 {
-                font-size: 2.65rem;
-            }
-
-            .typing-text {
-                font-size: 1.35rem;
-            }
-
-            .section-title {
-                font-size: 2.25rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .floating-card {
-                position: static;
-                margin: 0.6rem;
-            }
-
-            .hero-visual {
-                flex-direction: column;
-                min-height: auto;
-            }
-
-            .timeline-container::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item::after {
-                left: 22px;
-            }
-
-            .right {
-                left: 0%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-    <div id="particles-js"></div>
-    <div id="cursor-blur"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav>
-        <div class="logo">Saurabh <span>Meshram</span></div>
-        <div class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
-        <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#working">Working</a>
-            <a href="#experience">Timeline</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <header class="site-header" id="siteHeader">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand" href="#home" aria-label="Saurabh Meshram home">
+                <span class="brand-mark">SM</span>
+                <span class="brand-text">Saurabh Meshram</span>
+            </a>
 
-    <section class="hero" id="home">
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <div class="hero-badges">
-                <div class="hero-badge"><i class="fas fa-trophy"></i> State Level Winner</div>
-                <div class="hero-badge"><i class="fas fa-rocket"></i> Founder of EatLo</div>
-                <div class="hero-badge"><i class="fas fa-brain"></i> Hackathon Innovator</div>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation"
+                aria-controls="siteNav" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="site-nav" id="siteNav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+                <a class="nav-resume" href="./Saurabh_Meshram_Resume%20(2).pdf"
+                    download="Saurabh_Meshram_Resume.pdf">
+                    <i class="fa-solid fa-download"></i>
+                    Resume
+                </a>
             </div>
+        </nav>
+    </header>
 
-            <h1>Hi, I'm <span>Saurabh Meshram</span></h1>
-            <div class="typing-text" id="typewriter"></div>
-
-            <p>
-                Computer Science & Engineering diploma student focused on building
-                <span class="hero-highlight">real-world web apps, startup MVPs, AI concepts, and cybersecurity
-                    solutions.</span>
-                I don't just build projects — I build ideas into real products.
-            </p>
-
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">Explore Projects <i class="fas fa-arrow-right"></i></a>
-                <a href="./Saurabh_Meshram_Resume(1).docx" download class="btn btn-outline">
-  Download Resume <i class="fas fa-download"></i>
-</a>
-            </div>
-
-            <div class="social-hero">
-                <a href="mailto:sm5963397@gmail.com" target="_blank" title="Email Me"><i
-                        class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/sm5963397-sjm" target="_blank" title="GitHub"><i
-                        class="fab fa-github"></i></a>
-            </div>
-        </div>
-
-        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="250">
-            <div class="profile-orb">
-                <!-- Replace phot.png with your actual photo file name -->
-               <img src="./phot.png" alt="Saurabh Meshram" class="profile-img" />
-            </div>
-            <div class="floating-card one"><strong>3+</strong><br />Real Projects</div>
-            <div class="floating-card two"><strong>Firebase</strong><br />Backend Integration</div>
-            <div class="floating-card three"><strong>AI + Startup</strong><br />Problem Solver</div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2 class="section-title" data-aos="fade-up">Building the <span>Future</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            A look into my journey as a developer, startup thinker, and innovation-focused student.
-        </p>
-
-        <div class="about-content">
-            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-                <p>
-                    Hello! I'm a Computer Science & Engineering diploma student under the
-                    <strong>Maharashtra State Board of Technical Education (MSBTE)</strong>. My journey into technology
-                    is driven by practical learning, real product building, and solving problems through software.
-                </p>
-                <p>
-                    I focus on <strong>Frontend Development, Firebase Integration, UI/UX Design, Cybersecurity
-                        Awareness,
-                        and AI-powered project concepts</strong>. I enjoy building projects that can become useful
-                    products,
-                    not just college submissions.
-                </p>
-                <p>
-                    My goal is to secure a strong internship where I can contribute to meaningful projects in web
-                    development, AI-integrated products, cybersecurity, and startup MVP development.
-                </p>
-
-                <div class="quote-box glass-card">
-                    <p>“Focused on building impactful startups and AI-powered experiences.”</p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="glass-card stat-card">
-                        <i class="fas fa-code"></i>
-                        <h3>10+</h3>
-                        <p>Project Modules Built</p>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>1st</h3>
-                        <p>State Competition Winner</p>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Live</h3>
-                        <p>Deployed Web Projects</p>
-                    </div>
-                    <div class="glass-card stat-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Team</h3>
-                        <p>Presenter & Idea Lead</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-image" data-aos="fade-left" data-aos-delay="300">
-                <img src="phot.png" class="Saurabh Meshram" />
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <h2 class="section-title" data-aos="fade-up">What I <span>Can Build</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Services and skills I can contribute during internships, hackathons, and real-world projects.
-        </p>
-
-        <div class="services-grid">
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Frontend Development</h3>
-                <p>Responsive and modern websites using HTML, CSS, JavaScript, animations, and clean layouts.</p>
-            </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-palette"></i>
-                <h3>UI/UX Design</h3>
-                <p>Clean user interfaces, landing pages, portfolio websites, and product-style screens.</p>
-            </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-database"></i>
-                <h3>Firebase Integration</h3>
-                <p>Contact forms, order systems, Firestore data storage, and simple real-time backend flows.</p>
-            </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Startup MVP Building</h3>
-                <p>Turning ideas into demo-ready web apps with landing pages, workflows, and pitch-ready features.</p>
-            </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cybersecurity Awareness</h3>
-                <p>Educational platforms and cyber safety interfaces for students and common users.</p>
-            </div>
-            <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="600">
-                <i class="fas fa-robot"></i>
-                <h3>AI Project Prototyping</h3>
-                <p>AI-powered concepts for hackathons with dashboards, simulators, and smart workflows.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title" data-aos="fade-up">Technical <span>Arsenal</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            The tools and methodologies I bring to the table.
-        </p>
-
-        <div class="skills-grid">
-            <div class="glass-card skill-card" data-aos="zoom-in" data-aos-delay="200">
-                <h3><i class="fas fa-layer-group" style="color:var(--primary-cyan);"></i> Core Frontend</h3>
-                <div class="skill-list">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Responsive Design</span>
-                    <span class="tag">UI/UX Principles</span>
-                    <span class="tag">Animations</span>
-                </div>
-            </div>
-
-            <div class="glass-card skill-card" data-aos="zoom-in" data-aos-delay="300">
-                <h3><i class="fas fa-server" style="color:#ff9f1c;"></i> Programming & Backend</h3>
-                <div class="skill-list">
-                    <span class="tag">Java</span>
-                    <span class="tag">OOP</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">Firestore</span>
-                    <span class="tag">Database Concepts</span>
-                    <span class="tag">GitHub</span>
-                </div>
-            </div>
-
-            <div class="glass-card skill-card" data-aos="zoom-in" data-aos-delay="400">
-                <h3><i class="fas fa-user-tie" style="color:#a855f7;"></i> Professional Skills</h3>
-                <div class="skill-list">
-                    <span class="tag">Technical Presentation</span>
-                    <span class="tag">Problem Solving</span>
-                    <span class="tag">Team Collaboration</span>
-                    <span class="tag">Hackathon Experience</span>
-                    <span class="tag">Startup Thinking</span>
-                    <span class="tag">Leadership</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="marquee-wrap" data-aos="fade-up" data-aos-delay="500">
-            <div class="marquee-track">
-                <div class="tech-pill">HTML</div>
-                <div class="tech-pill">CSS</div>
-                <div class="tech-pill">JavaScript</div>
-                <div class="tech-pill">Firebase</div>
-                <div class="tech-pill">Firestore</div>
-                <div class="tech-pill">GitHub</div>
-                <div class="tech-pill">Java</div>
-                <div class="tech-pill">UI/UX</div>
-                <div class="tech-pill">HTML</div>
-                <div class="tech-pill">CSS</div>
-                <div class="tech-pill">JavaScript</div>
-                <div class="tech-pill">Firebase</div>
-                <div class="tech-pill">Firestore</div>
-                <div class="tech-pill">GitHub</div>
-                <div class="tech-pill">Java</div>
-                <div class="tech-pill">UI/UX</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title" data-aos="fade-up">Innovation <span>Portfolio</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Real projects, competition work, and hackathon concepts that show my product-building mindset.
-        </p>
-
-        <div class="projects-grid">
-            <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-img-container">
-                    <!-- Replace eatlo.png with your real screenshot -->
-                  <img src="./eatlo.png" alt="EatLo Food Platform Screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-<i class="fas fa-utensils fallback-icon"></i>
-
-                </div>
-                <div class="project-details">
-                    <span class="project-tech">HTML • CSS • JavaScript • Firebase</span>
-                    <h3>EatLo Food Platform</h3>
-                    <p>
-                        An end-to-end food ordering platform independently built with cart, checkout flow,
-                        location-based
-                        delivery calculation, order tracking, Firebase backend, and Telegram notification logic.
+    <main id="main">
+        <section class="hero section-pad" id="home">
+            <div class="hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Open to Frontend / React internships
                     </p>
-                    <div class="project-metrics">
-                        <span class="metric">Solo Built</span>
-                        <span class="metric">Live Website</span>
-                        <span class="metric">Firebase Backend</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://eatlo.food/" target="_blank" class="btn btn-primary">Live Demo <i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="project-img-container">
-                    <!-- Replace cyber-raksha.png with your real screenshot -->
-                  <img src="./cyber raksha.png" alt="Cyber Raksha Platform Screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-<i class="fas fa-user-shield fallback-icon"></i>
-                </div>
-                <div class="project-details">
-                    <span class="project-tech">Cybersecurity • Web • Awareness</span>
-                    <h3>Cyber Raksha Platform</h3>
-                    <p>
-                        A prize-winning cybersecurity awareness platform built to educate users about digital safety,
-                        cyber threats, and best practices. Won 1st prize in a State Level Project Competition.
+                    <h1>Building polished web experiences with React, Next.js, and product-first UI.</h1>
+                    <p class="role-line">Frontend Developer | React &amp; Next.js Developer | UI/UX focused developer
                     </p>
-                    <div class="project-metrics">
-                        <span class="metric">1st Prize</span>
-                        <span class="metric">State Level</span>
-                        <span class="metric">Team Project</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://cyber-raksha.vercel.app/" target="_blank" class="btn btn-primary">View Project
-                            <i class="fas fa-shield-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="project-img-container">
-                    <!-- Replace pashurakshak.png with your real UI screenshot -->
-                    <img src="pashurakshak.png" alt="PashuRakshak AI Concept Screenshot"
-                        onerror="this.style.display='none'" />
-                    <i class="fas fa-leaf fallback-icon"></i>
-                </div>
-                <div class="project-details">
-                    <span class="project-tech">AI Concept • AgriTech • Hackathon</span>
-                    <h3>PashuRakshak AI Concept</h3>
-                    <p>
-                        An AgriTech concept for early livestock disease detection in cows and buffaloes using AI-based
-                        scan flows, risk scoring, village outbreak prediction, and offline-first thinking.
+                    <p class="hero-summary">
+                        I am a Diploma CSE student and frontend developer building modern responsive websites, SaaS
+                        dashboards, and real-world web applications using React, Next.js, Tailwind CSS, JavaScript,
+                        Firebase, Supabase, and Vercel.
                     </p>
-                    <div class="project-metrics">
-                        <span class="metric">AI Concept</span>
-                        <span class="metric">Offline First</span>
-                        <span class="metric">Hackathon Ready</span>
+
+                    <div class="hero-actions" aria-label="Primary calls to action">
+                        <a class="btn btn-primary" href="#projects">
+                            <i class="fa-solid fa-layer-group"></i>
+                            View My Work
+                        </a>
+                        <a class="btn btn-secondary" href="./Saurabh_Meshram_Resume%20(2).pdf"
+                            download="Saurabh_Meshram_Resume.pdf">
+                            <i class="fa-solid fa-download"></i>
+                            Download Resume
+                        </a>
+                        <a class="btn btn-ghost" href="#contact">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Contact Me
+                        </a>
                     </div>
-                    <div class="project-links">
-                        <span class="tag"><i class="fas fa-lightbulb"></i> Hackathon Concept</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="working">
-        <h2 class="section-title" data-aos="fade-up">Currently <span>Working On</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Projects and ideas I am actively improving to become internship and startup-ready.
-        </p>
-
-        <div class="working-grid">
-            <div class="glass-card working-card" data-aos="fade-up" data-aos-delay="100">
-                <h3><i class="fas fa-utensils" style="color:var(--primary-cyan);"></i> EatLo Food Platform</h3>
-                <p>Improving order tracking, delivery fee logic, Firebase order flow, restaurant onboarding, and user
-                    experience.</p>
-            </div>
-            <div class="glass-card working-card" data-aos="fade-up" data-aos-delay="200">
-                <h3><i class="fas fa-magic" style="color:var(--accent-purple);"></i> AI Maintainability Tool</h3>
-                <p>Exploring an AI infrastructure tool concept that fixes messy code, remembers context, and improves
-                    maintainability.</p>
-            </div>
-            <div class="glass-card working-card" data-aos="fade-up" data-aos-delay="300">
-                <h3><i class="fas fa-shield-alt" style="color:var(--accent-orange);"></i> Cyber Raksha Expansion</h3>
-                <p>Planning better cybersecurity education flows, awareness modules, and stronger presentation-ready
-                    features.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title" data-aos="fade-up">My <span>Timeline</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Academic path and key milestones in my project-building journey.
-        </p>
-
-        <div class="timeline-container">
-            <div class="timeline-item left" data-aos="fade-right">
-                <div class="glass-card timeline-card">
-                    <h4>🏆 State Level Winner</h4>
-                    <span class="date">2026 • MSBTE Project Competition</span>
-                    <p>Secured 1st Prize for Cyber Raksha, a cybersecurity awareness platform. Contributed to idea,
-                        project presentation, and final pitching.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item right" data-aos="fade-left">
-                <div class="glass-card timeline-card">
-                    <h4>Founder & Solo Developer</h4>
-                    <h5>EatLo Food Platform</h5>
-                    <span class="date">2026 • Live Product</span>
-                    <p>Built a food ordering website independently with frontend, Firebase, order flow, delivery logic,
-                        and deployment.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item left" data-aos="fade-right">
-                <div class="glass-card timeline-card">
-                    <h4>Diploma in Computer Science</h4>
-                    <h5>MSBTE Polytechnic</h5>
-                    <span class="date">Current</span>
-                    <p>Focus Areas: Java, OOP, DBMS, Data Communication & Networking, Web Development, and project-based
-                        learning.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item right" data-aos="fade-left">
-                <div class="glass-card timeline-card">
-                    <h4>Hackathon Builder & Presenter</h4>
-                    <span class="date">2025 - 2026</span>
-                    <p>Built and pitched startup-style concepts including AI, cybersecurity, and AgriTech solutions with
-                        strong presentation focus.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonial">
-        <h2 class="section-title" data-aos="fade-up">Recognition <span>& Impact</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            A short proof of my innovation and presentation journey.
-        </p>
-
-        <div class="glass-card testimonial-box" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-quote-left"></i>
-            <p>Recognized for innovation, product thinking, and presentation skills in state-level project competition.
-            </p>
-            <span>Cyber Raksha • 1st Prize Winner</span>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title" data-aos="fade-up">Get in <span>Touch</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Let’s discuss internships, projects, startup ideas, or tech collaboration.
-        </p>
-
-        <div class="contact-content">
-            <div class="glass-card contact-info-card" data-aos="fade-right" data-aos-delay="200">
-                <div class="contact-meta-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <span>Email Me</span>
-                        <a href="mailto:sm5963397@gmail.com">sm5963397@gmail.com</a>
+                    <div class="hero-proof" aria-label="Portfolio highlights">
+                        <div>
+                            <strong>6+</strong>
+                            <span>Featured projects</span>
+                        </div>
+                        <div>
+                            <strong>1st</strong>
+                            <span>State-level prize</span>
+                        </div>
+                        <div>
+                            <strong>Top 15</strong>
+                            <span>Hackathon ranking</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-meta-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <span>Call Me</span>
-                        <p>+91 7666745468</p>
+                <div class="hero-visual reveal" aria-label="Professional portrait and profile summary">
+                    <div class="portrait-frame">
+                        <img src="./phot.png" alt="Saurabh Meshram professional portrait" fetchpriority="high" />
+                    </div>
+                    <div class="profile-meta">
+                        <div>
+                            <span>Focus</span>
+                            <strong>Frontend + SaaS UI</strong>
+                        </div>
+                        <div>
+                            <span>Stack</span>
+                            <strong>React, Next.js, Tailwind</strong>
+                        </div>
+                        <div>
+                            <span>Deployments</span>
+                            <strong>Vercel + GitHub Pages</strong>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-meta-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <span>Location</span>
-                        <p>India</p>
+        <section class="section-pad" id="about">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-user"></i> About Me</p>
+                <h2>Developer mindset, design sense, and real shipping experience.</h2>
+                <p>
+                    I like building web products that feel clean, useful, and production-ready. My work combines
+                    responsive UI, smooth user flows, and practical integrations like Firebase, Firestore, Supabase, APIs,
+                    and deployment pipelines.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <article class="info-panel reveal">
+                    <h3>What I bring</h3>
+                    <p>
+                        I am focused on frontend roles where I can turn designs and product ideas into fast,
+                        recruiter-friendly, responsive interfaces. I care about component structure, spacing,
+                        accessibility basics, and making pages feel trustworthy for real users.
+                    </p>
+                    <div class="check-list">
+                        <span><i class="fa-solid fa-check"></i> Responsive landing pages and dashboards</span>
+                        <span><i class="fa-solid fa-check"></i> React, Next.js, Tailwind CSS interfaces</span>
+                        <span><i class="fa-solid fa-check"></i> Firebase, Firestore, Supabase integrations</span>
+                        <span><i class="fa-solid fa-check"></i> Vercel deployments and GitHub workflows</span>
                     </div>
-                </div>
+                </article>
 
-                <div class="contact-meta-item">
-                    <i class="fab fa-github"></i>
-                    <div>
+                <article class="info-panel reveal">
+                    <h3>Currently looking for</h3>
+                    <p>
+                        Frontend Developer, React Developer, Next.js Developer, or UI-focused internship opportunities
+                        where I can contribute to real product screens, dashboards, design systems, and customer-facing
+                        web experiences.
+                    </p>
+                    <div class="mini-stack">
+                        <span>Frontend Internship</span>
+                        <span>React Internship</span>
+                        <span>Next.js Projects</span>
+                        <span>SaaS UI</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad" id="skills">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-code"></i> Skills / Tech Stack</p>
+                <h2>Modern frontend stack with practical backend integrations.</h2>
+                <p>
+                    Tools I use to build responsive UI, dashboards, real-world order flows, and deployable web
+                    applications.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card reveal">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>Frontend</h3>
+                    <div class="tag-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>Tailwind CSS</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </article>
+
+                <article class="skill-card reveal">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Backend &amp; Data</h3>
+                    <div class="tag-list">
+                        <span>Firebase</span>
+                        <span>Firestore</span>
+                        <span>Supabase</span>
+                        <span>APIs</span>
+                        <span>Cloudflare Workers</span>
+                        <span>Order Workflows</span>
+                    </div>
+                </article>
+
+                <article class="skill-card reveal">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Workflow</h3>
+                    <div class="tag-list">
                         <span>GitHub</span>
-                        <a href="https://github.com/sm5963397-sjm" target="_blank">github.com/sm5963397-sjm</a>
+                        <span>Vercel</span>
+                        <span>UI/UX Thinking</span>
+                        <span>Framer Motion</span>
+                        <span>SEO Basics</span>
+                        <span>Presentation</span>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad" id="projects">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Featured Projects</p>
+                <h2>Live projects that show product thinking and frontend execution.</h2>
+                <p>
+                    Each project highlights a different practical skill: food ordering flows, SaaS dashboards, EdTech UI,
+                    AI landing pages, internship assignments, and competition-ready product storytelling.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://eatlo.food/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Open EatLo live website">
+                        <img src="./eatlo.png" alt="EatLo food delivery platform screenshot" loading="lazy"
+                            decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>Food Delivery Platform</span>
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3>EatLo</h3>
+                        <p>
+                            A real-world food delivery website with responsive UI, Firebase/Firestore order handling,
+                            customer order tracking, location features, and Cloudflare Worker based order notifications.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                            <span>Firestore</span>
+                            <span>Cloudflare Workers</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary" href="https://eatlo.food/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary" href="https://github.com/sm5963397-sjm/EatLo"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://smart-leads-dashboard-sigma.vercel.app/dashboard"
+                        target="_blank" rel="noopener noreferrer" aria-label="Open Smart Leads Dashboard live website">
+                        <img src="./project-smart-leads.png" alt="Smart Leads Dashboard screenshot" loading="lazy"
+                            decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>CRM / SaaS Dashboard</span>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Smart Leads Dashboard</h3>
+                        <p>
+                            A modern CRM/SaaS dashboard for managing leads, analytics, business metrics, and dashboard
+                            workflows with a professional admin-panel interface.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>Next.js</span>
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary"
+                                href="https://smart-leads-dashboard-sigma.vercel.app/dashboard" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary"
+                                href="https://github.com/sm5963397-sjm/smart-leads-dashboard" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://next-gen-learning-dashboard-inky.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open Next Gen Learning Dashboard live website">
+                        <img src="./project-learning.png" alt="Next Gen Learning Dashboard screenshot" loading="lazy"
+                            decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>EdTech Dashboard</span>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3>Next Gen Learning Dashboard</h3>
+                        <p>
+                            A modern EdTech-style dashboard with course management UI, student analytics, AI-learning
+                            dashboard concept, responsive layouts, and SaaS-style design.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>Next.js</span>
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                            <span>Supabase</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary"
+                                href="https://next-gen-learning-dashboard-inky.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary" href="https://github.com/sm5963397-sjm/student-dashboard"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://website-genie-landing.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open Website Genie live website">
+                        <img src="./project-website-genie.png" alt="Website Genie landing page screenshot"
+                            loading="lazy" decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>AI SaaS Landing Page</span>
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>Website Genie Landing Page</h3>
+                        <p>
+                            A premium AI website generator landing page with modern hero section, SaaS-style design,
+                            responsive layout, and smooth UI animations.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>Next.js</span>
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary" href="https://website-genie-landing.vercel.app/"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary"
+                                href="https://github.com/sm5963397-sjm/website-genie-landing" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://first-intership-assignment.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open JG University redesign live website">
+                        <img src="./project-jg-university.png" alt="JG University landing page redesign screenshot"
+                            loading="lazy" decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>Internship Assignment</span>
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3>JG University Landing Page Redesign</h3>
+                        <p>
+                            Internship assignment project: redesigned a modern responsive university landing page inspired
+                            by JG University with hero, programs, campus, alumni/testimonials, CTA, and professional UI.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>Next.js</span>
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                            <span>Framer Motion</span>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary" href="https://first-intership-assignment.vercel.app/"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary"
+                                href="https://github.com/sm5963397-sjm/First-Intership-Assignment" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <a class="project-image" href="https://cyber-raksha.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open Cyber Raksha live website">
+                        <img src="./cyber%20raksha.png" alt="Cyber Raksha cybersecurity project screenshot"
+                            loading="lazy" decoding="async" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-topline">
+                            <span>Cybersecurity Awareness</span>
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Cyber Raksha</h3>
+                        <p>
+                            Cybersecurity awareness and safety project created for competitions. Achieved State-Level 1st
+                            Prize. I contributed to the idea, development, and presentation.
+                        </p>
+                        <div class="tag-list compact">
+                            <span>Web Development</span>
+                            <span>Cybersecurity Concepts</span>
+                            <span>Presentation</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-small btn-primary" href="https://cyber-raksha.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                Live Demo
+                            </a>
+                            <a class="btn btn-small btn-secondary" href="https://github.com/sm5963397-sjm"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad" id="achievements">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-trophy"></i> Achievements</p>
+                <h2>Signals recruiters can scan quickly.</h2>
+                <p>
+                    A concise view of competition results, shipped work, and product-building consistency.
+                </p>
+            </div>
+
+            <div class="achievement-grid">
+                <article class="achievement-card reveal">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>State-Level 1st Prize</h3>
+                    <p>Won for the Cyber Raksha cybersecurity awareness project.</p>
+                </article>
+                <article class="achievement-card reveal">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>National-Level Hackathon</h3>
+                    <p>Selected for national-level hackathon participation.</p>
+                </article>
+                <article class="achievement-card reveal">
+                    <i class="fa-solid fa-ranking-star"></i>
+                    <h3>Top 15 Ranking</h3>
+                    <p>Achieved a Top 15 position in hackathon competition work.</p>
+                </article>
+                <article class="achievement-card reveal">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Live Web Apps</h3>
+                    <p>Built and deployed multiple live applications using modern tools.</p>
+                </article>
+                <article class="achievement-card reveal">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <h3>EatLo Platform</h3>
+                    <p>Developed a real-world food delivery platform with order workflows.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad" id="experience">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-briefcase"></i> Experience / Internship</p>
+                <h2>Practical work across product builds, assignments, and competitions.</h2>
+                <p>
+                    I have focused on building real, deployed interfaces that are easy to explain in interviews and easy
+                    for recruiters to evaluate.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">
+                        <h3>Founder &amp; Solo Developer - EatLo</h3>
+                        <p>
+                            Built a live food delivery platform with responsive frontend, Firebase/Firestore order
+                            storage, location-aware flows, and Cloudflare Worker based order notifications.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">
+                        <h3>Frontend Internship Assignment - JG University Redesign</h3>
+                        <p>
+                            Delivered a modern university landing page with hero, programs, campus, testimonials, CTA,
+                            animations, and responsive layouts using Next.js, React, Tailwind CSS, and Framer Motion.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-date">2025 - 2026</div>
+                    <div class="timeline-content">
+                        <h3>Hackathon Builder &amp; Presenter</h3>
+                        <p>
+                            Built and presented startup-style project concepts across cybersecurity, AI, education, and
+                            practical web products, including Cyber Raksha's state-level winning presentation.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad" id="education">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> Education</p>
+                <h2>Diploma CSE foundation with a strong frontend portfolio.</h2>
+                <p>
+                    I combine academic fundamentals with consistent practical shipping through live apps and competition
+                    projects.
+                </p>
+            </div>
+
+            <div class="education-card reveal">
+                <div>
+                    <span class="education-label">Current</span>
+                    <h3>Diploma in Computer Science Engineering</h3>
+                    <p>
+                        Focus areas include web development, Java/OOP, DBMS, data communication and networking,
+                        programming fundamentals, project development, and technical presentation.
+                    </p>
                 </div>
+                <div class="education-stack" aria-label="Academic and practical focus">
+                    <span>Web Development</span>
+                    <span>Java / OOP</span>
+                    <span>DBMS</span>
+                    <span>Networking</span>
+                    <span>Project Building</span>
+                </div>
+            </div>
+        </section>
 
-               <a href="./Saurabh_Meshram_Resume(1).docx" download class="btn btn-outline">
-  Download Resume <i class="fas fa-download"></i>
-</a>
+        <section class="section-pad contact-section" id="contact">
+            <div class="section-heading reveal">
+                <p class="eyebrow"><i class="fa-solid fa-envelope"></i> Contact</p>
+                <h2>Let us build something recruiter-ready.</h2>
+                <p>
+                    Reach out for frontend internships, React/Next.js roles, project collaboration, or portfolio review.
+                </p>
             </div>
 
-            <div class="glass-card contact-form" data-aos="fade-left" data-aos-delay="300">
-                <!-- Option 1: Use Formspree. Replace YOUR_FORM_ID with your real Formspree form id. -->
-                <!-- Example action: https://formspree.io/f/abcdwxyz -->
-               <form id="contactForm">
-  <div class="form-group">
-    <input type="text" id="name" name="name" placeholder="Your Name" required />
-  </div>
+            <div class="contact-grid">
+                <article class="contact-card reveal">
+                    <h3>Contact Details</h3>
+                    <div class="contact-list">
+                        <a href="mailto:sm5963397@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>sm5963397@gmail.com</span>
+                        </a>
+                        <a href="tel:+917666745468">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 7666745468</span>
+                        </a>
+                        <a href="https://github.com/sm5963397-sjm" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                            <span>github.com/sm5963397-sjm</span>
+                        </a>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>India</span>
+                        </span>
+                    </div>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" href="mailto:sm5963397@gmail.com">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Email Me
+                        </a>
+                        <a class="btn btn-secondary" href="./Saurabh_Meshram_Resume%20(2).pdf"
+                            download="Saurabh_Meshram_Resume.pdf">
+                            <i class="fa-solid fa-download"></i>
+                            Resume
+                        </a>
+                    </div>
+                </article>
 
-  <div class="form-group">
-    <input type="email" id="email" name="email" placeholder="Your Email" required />
-  </div>
-
-  <div class="form-group">
-    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
-  </div>
-
-  <button type="submit" id="sendBtn" class="btn btn-primary" style="width: 100%; border-radius: 12px;">
-    Send Message <i class="fas fa-paper-plane"></i>
-  </button>
-
-  <p id="formStatus"></p>
-</form>
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="field-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+                    </div>
+                    <div class="field-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com"
+                            autocomplete="email" required />
+                    </div>
+                    <div class="field-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me about the opportunity"
+                            required></textarea>
+                    </div>
+                    <button class="btn btn-primary form-submit" type="submit" id="sendBtn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                    <p class="form-status" id="formStatus" aria-live="polite"></p>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
-        <div class="footer-content">
+    <footer class="site-footer">
+        <div class="footer-grid">
             <div>
-                <h3>Saurabh Meshram</h3>
-                <p>Developer, startup thinker, and CSE student building practical products with passion & coffee ☕</p>
+                <a class="brand footer-brand" href="#home">
+                    <span class="brand-mark">SM</span>
+                    <span class="brand-text">Saurabh Meshram</span>
+                </a>
+                <p>Frontend Developer | React &amp; Next.js Developer | UI/UX focused developer.</p>
             </div>
+
             <div>
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
+                <h3>Navigate</h3>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
+                <a href="#achievements">Achievements</a>
                 <a href="#contact">Contact</a>
             </div>
+
             <div>
-                <h4>Connect</h4>
+                <h3>Connect</h3>
                 <a href="mailto:sm5963397@gmail.com">Email</a>
-                <a href="https://github.com/sm5963397-sjm" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/sm5963397-sjm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="./Saurabh_Meshram_Resume%20(2).pdf" download="Saurabh_Meshram_Resume.pdf">Resume</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Saurabh Meshram | Built for Tech Internships</p>
+            <p>&copy; <span id="currentYear">2026</span> Saurabh Meshram. Built for frontend internship opportunities.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-    <script>
-        // AOS Animation
-        AOS.init({ duration: 1000, once: true });
-
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const navLinks = document.getElementById("navLinks");
-
-        mobileMenuBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => navLinks.classList.remove("active"));
-        });
-
-        // Cursor Blur
-        const blur = document.getElementById("cursor-blur");
-        document.addEventListener("mousemove", (e) => {
-            blur.style.left = (e.clientX - 175) + "px";
-            blur.style.top = (e.clientY - 175) + "px";
-        });
-
-        // Typewriter Effect
-        const textElement = document.getElementById("typewriter");
-        const phrases = [
-            "Frontend Developer",
-            "Firebase Builder",
-            "Startup MVP Creator",
-            "AI Project Innovator",
-            "Cybersecurity Awareness Builder"
-        ];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentPhrase = phrases[phraseIndex];
-
-            if (isDeleting) {
-                textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                isDeleting = true;
-                typeSpeed = 1800;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 450;
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        document.addEventListener("DOMContentLoaded", typeEffect);
-
-        // Contact Form Handler
-        const contactForm = document.getElementById("contactForm");
-        const formStatus = document.getElementById("formStatus");
-
-        contactForm.addEventListener("submit", function () {
-            formStatus.textContent = "Sending your message...";
-        });
-
-        // Particles Background
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 70, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.3, random: false },
-                size: { value: 1.5, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#00ffff",
-                    opacity: 0.15,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1.5,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" }
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
-                    push: { particles_nb: 3 }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
-    <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-
-  import {
-    getFirestore,
-    collection,
-    addDoc,
-    serverTimestamp
-  } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyBGcbV4C95O7l6QoUPDI_ebE8PhksCa-hU",
-    authDomain: "portfolio-c2d02.firebaseapp.com",
-    projectId: "portfolio-c2d02",
-    storageBucket: "portfolio-c2d02.firebasestorage.app",
-    messagingSenderId: "6893797042",
-    appId: "1:6893797042:web:62b3c5dad39bb36b9e53ab",
-    measurementId: "G-GW9FW2P99B"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const contactForm = document.getElementById("contactForm");
-  const formStatus = document.getElementById("formStatus");
-  const sendBtn = document.getElementById("sendBtn");
-
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    try {
-      sendBtn.disabled = true;
-      sendBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-      formStatus.style.color = "#00ffff";
-      formStatus.textContent = "Sending your message...";
-
-      await addDoc(collection(db, "messages"), {
-        name: name,
-        email: email,
-        message: message,
-        source: "portfolio",
-        createdAt: serverTimestamp()
-      });
-
-      formStatus.style.color = "#22c55e";
-      formStatus.textContent = "Message sent successfully!";
-      contactForm.reset();
-
-    } catch (error) {
-      console.error("Firebase Error:", error);
-      formStatus.style.color = "#ef4444";
-      formStatus.textContent = "Message failed. Check Firebase rules.";
-    } finally {
-      sendBtn.disabled = false;
-      sendBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-    }
-  });
-</script>
+    <script type="module" src="./script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SM logo">
+    <rect width="64" height="64" rx="12" fill="#080b12"/>
+    <path d="M8 48V16h48v32H8Z" fill="none" stroke="#48dbcb" stroke-width="3"/>
+    <text x="32" y="39" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#f6f8fb">SM</text>
+    <path d="M12 52h40" stroke="#f6b44b" stroke-width="4" stroke-linecap="round"/>
+</svg>
